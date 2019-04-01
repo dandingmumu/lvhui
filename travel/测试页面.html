@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <base target="_blank">
+    <link rel="shortcut icon" href="img/bitbug_favicon.ico" />
+    <link rel="stylesheet" href="css/base1.css">
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/move.js"></script>
+    <title>上海旅汇网络科技有限公司-旅游业态，服务运营，数据整合，旅游产品服务！</title>
+    <!-- (description)网站说明标签,content后面填写内容 -->
+    <meta name="description" content="上海旅汇网络科技有限公司是由上海豪盛国际旅行社有限公司发起成立，集聚资深旅游专家、IT精英、策划大师共同组建的专注互联网旅游发展的网络科技公司。" />
+    <!-- 网站关键词，是搜索引擎关注点之一。 -->
+    <meta name="Keywords" content="景区，酒店，交通运输，餐厅，购物店，导游，供应商，销售商，旅汇，豪盛。" />
+    <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.js"></script>
+    　　<script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <![endif]—>
+    <!--[if IE]>
+    <style type="text/css">
+    .clearfix {
+        zoom: 1;            /* triggers hasLayout */
+        display: block;     /* resets display for IE/Win */
+    }
+    /* Only IE can see inside the conditional comment
+    and read this CSS rule. Don't ever use a normal HTML
+    comment inside the CC or it will close prematurely. */
+    </style>
+    <![endif]-->
+    <script>
+        window.onload = function () {
+            var num = 0;
+            var timer = null;
+            var arrUrl = ['img/big-1.jpg','img/big-2.jpg','img/big-3.jpg'];
+            var oImg = document.getElementById('big-img');
+            var aListLi = document.getElementsByClassName('list')[0].getElementsByTagName('li');
+            var oHeader = document.getElementsByTagName('header')[0];
+//            alert(aListLi.length);
+            function autoPlay(){
+                clearInterval(timer);
+                timer = setInterval(function(){
+                    num++;
+                    num%=arrUrl.length;
+                    fnTab();
+                }, 2000);
+            }
+            autoPlay();
+            oHeader.onmouseover = function (){
+                clearTimeout( timer );
+            }
+            oHeader.onmouseout = autoPlay;
+//            ////////////////////////////////////////////////////////////////////////
+//            // 初始化
+            function fnTab(){
+                oImg.src = arrUrl[num];
+                for( var i=0; i<aListLi.length; i++ ){
+                    aListLi[i].className = '';
+                }
+                aListLi[num].className = 'active';
+            }
+            fnTab();
+//
+            for( var i=0; i<aListLi.length; i++ ){
+                aListLi[i].index = i;			// 索引值
+                aListLi[i].onclick = function (){
+                    num = this.index;
+                    fnTab();
+                }
+            }
+            for( var i=0; i<aListLi.length; i++ ){
+                aListLi[i].index = i;			// 索引值
+                aListLi[i].onclick = function (){
+                    num = this.index;
+                    fnTab();
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<!-- 头部导航栏和轮播图部分 -->
+<header>
+    <nav>
+        <div class="row nav-row">
+            <div class="row3 fl nav_logo"></div>
+            <div class="row3">
+                <ul class="nav-center-ul">
+                    <li>
+                        <a href="#">首页</a>
+                    </li>
+                    <li>
+                        <a href="#">商务合作</a>
+                    </li>
+                    <li>
+                        <a href="#">帮助支持</a>
+                    </li>
+                    <li>
+                        <a href="#">服务市场</a>
+                    </li>
+                    <li>
+                        <a href="#">关于旅汇</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="row3">
+                <ul class="nav-right-ul">
+                    <li>
+                        <a href="#">登录</a>
+                    </li>
+                    <li>
+                        <a class="shiyong" href="#">免费试用</a>
+                    </li>
+                    <li>
+                        <a class="guanli" href="#">管理中心</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <img id="big-img" src="img/big-1.jpg" alt="" />
+    <ul class="list">
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</header>
+<!-- 主题部分 -->
+<section>
+    <!-- 线路推荐部分 -->
+    <span class="Title">线路推荐</span>
+    <div class="row frist-row">
+        <div class="row4">
+            <span>周边游</span>
+        </div>
+        <div class="row4">
+            <span>自由行/半自由行</span>
+        </div>
+        <div class="row4">
+            <span>国内跟团游</span>
+        </div>
+        <div class="row4">
+            <span>亲子/制定游</span>
+        </div>
+    </div>
+    <div class="row second-row">
+        <div class="row4">
+            <span>酒店</span>
+        </div>
+        <div class="row4">
+            <span>景区</span>
+        </div>
+        <div class="row4">
+            <span>邮轮</span>
+        </div>
+        <div class="row4">
+            <span>签证</span>
+        </div>
+    </div>
+    <!-- 供应，销售商部分 -->
+    <div class="row row-span">
+        <span>供应商严选<a href="#" class="sale-small-ico">更多</a></span>
+        <span>销售商严选<a href="#" class="sale-small-ico">更多</a></span>
+    </div>
+    <div class="row">
+        <div class="row2">
+            <div class="row4 supply">
+                <a href=""></a>
+                <a href=""></a>
+            </div>
+            <div class="row4 supply">
+                <a href=""></a>
+                <a href=""></a>
+            </div>
+            <div class="row4 supply">
+                <a href=""></a>
+                <a href=""></a>
+            </div>
+            <div class="row4 supply">
+                <a href=""></a>
+                <a href=""></a>
+            </div>
+        </div>
+        <div class="row2 Sale">
+            <ul>
+                <li>
+                    <a href="#">1.豪盛国际旅行社</a>
+                    <i></i>
+                </li>
+                <li>
+                    <a href="http://www.bjcts.com/">2.首都国际旅行社</a>
+                    <i></i>
+                </li>
+                <li>
+                    <a href="#">3.山地旅行社</a>
+                    <i></i>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- 中间三图标部分 -->
+    <div id="div1" class="row three-img">
+        <div class="row3">
+            <img src="img/three-img.jpg" alt="">
+            <!--<img class="hidden" src="img/three-img-bg.jpg" alt="">-->
+        </div>
+        <div class="row3">
+            <img src="img/three-img-2.jpg" alt="">
+            <!--<img class="hidden" src="img/three-img-bg-2.jpg" alt="">-->
+        </div>
+        <div class="row3">
+            <img src="img/three-img-3.jpg" alt="">
+            <!--<img class="hidden" src="img/three-img-bg-3.jpg" alt="">-->
+        </div>
+    </div>
+    <img id="car" src="img/car.jpg" width="200" alt="">
+    <!-- 关于旅汇介绍部分 -->
+    <div class="about-one">
+        <div class="w">
+            <h3>搭建供应商和销售商的桥梁</h3>
+            <p>承载旅游新业态，双向融合发展，以服务提升体验，<br />以运营推动价值，整合行业资源实现数据，信息互通，相互协同</p>
+            <ul class="row about-ul-left">
+                <li>
+                    产品管理<br />
+                    产品打包<br />
+                    增值服务<br />
+                    动态通告
+                </li>
+                <li>
+                    B2B管理<br />
+                    分销商预付管理<br />
+                    分销商全局价格授权
+                </li>
+            </ul>
+            <ul class="row about-ul-right">
+                <li>
+                    销售管理<br />
+                    退改申请处理<br />
+                    订单报表
+                </li>
+                <li>
+                    财务管理<br />
+                    应付钱收款汇总<br />
+                    每月手指情况汇总
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="about-two">
+        <div class="w">
+            <h2>关于旅汇</h2>
+            <p>上海旅汇网络科技有限公司是由上海豪盛国际旅行社有限公司发起成立，集聚资深旅游专家、IT精英、策划大师共同组建的专注互联网旅游发展的网络科技公司。拥有自主知识产权的旅汇旅游B2B+B2C服务平台。独立运营的旅汇旅游网（http://home.5959519.com），是以互联网技术开发、产品创新、整合营销、渠道渗透为核心业务，致力于通过技术创新和互联网运营优化资源配置，促进旅游要素各主体的网络化、在线化，提升传统旅游产业的信息化，通过平台互联搭建供应商与销售商桥梁，承载旅游产业新业态，双向融合发展，为数万家传统旅行社、几十万家相关企事业机构及百万旅游相关从业人员保驾护航，以服务提升体验，以运营拉动价值、整合行业资源，实现数据、信息互通，相互协同，平等共享，为景区、酒店、旅行社、旅游批发商等进一步提供服务赋能的综合性旅游平台。</p>
+        </div>
+    </div>
+    <!-- 商务合作部分 -->
+    <div class="row cooperation">
+        <div class="cooperation-left"><img src="img/cooperation-img.png" alt=""></div>
+        <div class="cooperation-right">
+            <h3>商务合作</h3>
+            <p>
+                如果您是旅游资源经营权权利人，业主自营或受业务委托经营或者是买断经营权（包括但不限于景区、酒店、交通运输企业、餐厅、购物店、导游等！）欢迎成为供应商。您是旅行社或一般涉旅游企业（俱乐部）或个人，欢迎成为销售商。
+            </p>
+        </div>
+    </div>
+</section>
+<footer>
+    <div class="top clearfix">
+        <div class="w">
+            <div class="fl">
+                <h4>战略合作伙伴</h4>
+                <ul>
+                    <li><a href="https://www.alipay.com/"><img src="img/Alipay.png" alt="支付宝" /></a></li>
+                    <li><a href="http://cn.unionpay.com/"><img src="img/UnionPay.png" alt="中国银联" /></a></li>
+                    <li><a href="http://www.boc.cn/"><img src="img/boc.png" alt="中国银行" /></a></li>
+                    <li><a href="http://www.10086.cn"><img src="img/cmcc.png" alt="中国移动通信" /></a></li>
+                    <li><a href="http://www.chinaunicom.com.cn/"><img src="img/cucc.png" alt="中国联通" /></a></li>
+                    <li><a href="http://www.chinatelecom.com.cn/"><img src="img/ctcc.png" alt="中国电信" /></a></li>
+                </ul>
+            </div>
+            <div class="fr">
+                <h4>手机端登录</h4>
+                <div><img src="img/logon-code.png" alt="登录二维码"></div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom">
+        <div class="w">
+            <p>服务热线：1234-123456789</p>
+            <p>Copyright@ All Right Reserved. 备案许可证：沪IPC备12345678号</p>
+            <p>沪公安网备 123456789000000号</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
